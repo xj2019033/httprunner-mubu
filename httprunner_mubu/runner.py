@@ -61,7 +61,7 @@ def run_api(api_info):
     request = api_info["request"]
     method = request.pop("method")
     url = request.pop('url')
-    resp = requests.request(method, url, **request)
+    resp = session.request(method, url, **request)
     validator_mapping = api_info["validate"]
     for key in validator_mapping:
         if "$" in key:
