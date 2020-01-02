@@ -7,6 +7,7 @@ authors = ["xj2019033 <1102421956@qq.com>"]
 [tool.poetry.dependencies]
 python = "^3.6"
 jsonpath = "^0.82"
+PyYaml = "^5.2"
 
 [tool.poetry.dev-dependencies]
 coverage = "^4.5.4"
