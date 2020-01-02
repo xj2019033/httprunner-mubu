@@ -2,7 +2,7 @@ import os
 import unittest
 
 from httprunner_mubu.loader import load_yaml
-from httprunner_mubu.runner import run_testcase_yml, run_yaml
+from httprunner_mubu.runner import run_yaml
 
 
 class TestSingleTestcase(unittest.TestCase):
@@ -19,12 +19,12 @@ class TestSingleTestcase(unittest.TestCase):
         single_testcase_yaml = os.path.join(os.path.dirname(__file__), "api", "get_homepage.yml")
         result=run_yaml(single_testcase_yaml)
         self.assertEqual(len(result), 1)
-        #self.assertIsInstance(result[0], True)
+        self.assertEqual(result[0], True)
 
         single_testcase_yaml = os.path.join(os.path.dirname(__file__), "api", "api_login_submit.yml")
         result = run_yaml(single_testcase_yaml)
         self.assertEqual(len(result), 1)
-        #self.assertIsInstance(result[0], True)
+        self.assertEqual(result[0], True)
 
     def test_run_testcase_yml(self):
         single_api_yml = os.path.join(os.path.dirname(__file__), "testcase", "mubu_login.yml")
