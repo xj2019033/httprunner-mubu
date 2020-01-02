@@ -1,35 +1,33 @@
 
 -
     request:
-        url: "https://mubu.com/"
+        url: 'https://mubu.com/'
         method: "GET"
         headers:
-            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
+          user-agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
         verify: False
     validate:
         status_code: 200
 
 -
     request:
-        url: "https://mubu.com/login"
+        url: 'https://mubu.com/login'
         method: "GET"
         headers:
-            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
+          user-agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
         verify: False
     validate:
         status_code: 200
 
 -
     request:
-        url: "https://mubu.com/api/login/submit"
+        url: 'https://mubu.com/api/login/submit'
         method: "POST"
         headers:
-            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
-            "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-        data: "phone=18613143458&password=3AnZNk%26iTteM2PYl1T%24p&remember=true"
+          user-agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
+          content-type: "application/x-www-form-urlencoded; charset=UTF-8"
+        data: "password=xj150055&phone=15068729906"
         verify: False
-    extract:
-        code: $.code
     validate:
         status_code: 200
         $.code: 0
@@ -39,7 +37,7 @@
         url: "https://mubu.com/list?code=$code"
         method: "GET"
         headers:
-            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
+            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36"
         verify: False
     validate:
         status_code: 200
