@@ -25,6 +25,5 @@ def main():
     success = run_yaml(args.yaml_path)
     return success
 
-
 if __name__ == '__main__':
     main()

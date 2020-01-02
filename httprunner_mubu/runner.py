@@ -59,7 +59,6 @@ def run_api(api_info):
     :return:
     """
     request = api_info["request"]
-    print('111---111',request)
     method = request.pop("method")
     url = request.pop('url')
     resp = requests.request(method, url, **request)
@@ -88,7 +87,6 @@ def run_yaml(yml_file):
     if is_api(loaded_content):
         success=run_api(loaded_content)
         result.append(success)
-        #run_api(loaded_content)
 
     elif is_testcase(loaded_content):
         for api_info in loaded_content:
