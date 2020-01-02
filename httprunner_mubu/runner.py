@@ -7,6 +7,7 @@ from httprunner_mubu.validate import is_api, is_testcase
 
 session = sessions.Session()
 session_variables_mapping = {}
+variables_mapping={}
 
 def extract_json_field(resp, json_field):
     value = jsonpath.jsonpath(resp.json(), json_field)
@@ -70,6 +71,12 @@ def run_api(api_info):
             actual_value = getattr(resp, key)
         expected_value = validator_mapping[key]
         assert actual_value == expected_value
+    extractor_mapping=api_info.get("extract",{})
+    for var_name in extractor_mapping:
+        var_expr=extractor_mapping[var_name] #$.code
+        var_value=extract_json_field(resp,var_expr)
+        variables_mapping[var_name]=var_value
+        print(var_value)
     return True
 
 def run_api_yaml(yml_file):
