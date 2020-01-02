@@ -9,6 +9,7 @@ class TestSingleAPI(unittest.TestCase):
     """加载出的接口请求参数与原始信息一致
     """
     def test_loader_single_api(self):
+        print(os.path.dirname(__file__))
         single_api_yml=os.path.join(os.path.dirname(__file__),"api","get_homepage.yml")
         load_json=load_yaml(single_api_yml)
         self.assertIn("request", load_json)
